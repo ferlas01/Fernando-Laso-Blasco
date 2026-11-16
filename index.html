@@ -1,1 +1,352 @@
-Pagina web de fernando
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Perfil profesional de Fernando Laso Blasco: investigación de mercados, marketing basado en datos y analítica de negocio.">
+	<meta name="theme-color" content="#f4efe7">
+	<title>Fernando Laso Blasco | Marketing y analítica</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--paper: #f4efe7;
+			--surface: #fffdf9;
+			--ink: #30271f;
+			--muted: #71665b;
+			--line: #ded4c8;
+			--clay: #9a6346;
+			--clay-dark: #72442f;
+			--sage: #66745d;
+			--serif: Georgia, "Times New Roman", serif;
+			--sans: "DM Sans", "Manrope", sans-serif;
+		}
+
+		*, *::before, *::after { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--ink);
+			font-family: var(--sans);
+			font-size: 16px;
+			line-height: 1.65;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		a { color: inherit; }
+		a:focus-visible { outline: 2px solid var(--clay); outline-offset: 4px; }
+		.page-shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+
+		.topbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 84px;
+			border-bottom: 1px solid var(--line);
+		}
+		.wordmark {
+			color: var(--clay-dark);
+			font-family: var(--serif);
+			font-size: 20px;
+			font-weight: 700;
+			text-decoration: none;
+		}
+		.nav-links { display: flex; gap: 30px; margin: 0; padding: 0; list-style: none; }
+		.nav-links a {
+			color: var(--muted);
+			font-size: 13px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: color 160ms ease;
+		}
+		.nav-links a:hover { color: var(--clay-dark); }
+
+		.hero {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 250px;
+			align-items: center;
+			gap: 64px;
+			padding: 92px 0 84px;
+		}
+		.eyebrow {
+			margin: 0 0 20px;
+			color: var(--clay-dark);
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+		}
+		h1, h2, h3, p { margin-top: 0; }
+		h1 {
+			max-width: 700px;
+			margin-bottom: 22px;
+			font-family: var(--serif);
+			font-size: clamp(48px, 7vw, 82px);
+			font-weight: 400;
+			letter-spacing: 0;
+			line-height: 0.99;
+		}
+		.hero-role {
+			max-width: 650px;
+			margin-bottom: 30px;
+			color: var(--muted);
+			font-size: 16px;
+			font-weight: 500;
+		}
+		.hero-intro { max-width: 630px; margin-bottom: 32px; color: #53483e; font-size: 17px; }
+		.contact-button {
+			display: inline-flex;
+			min-height: 48px;
+			align-items: center;
+			gap: 10px;
+			padding: 0 20px;
+			border: 1px solid var(--clay-dark);
+			border-radius: 3px;
+			background: var(--clay-dark);
+			color: #fffdf9;
+			font-size: 13px;
+			font-weight: 700;
+			text-decoration: none;
+			transition: background 160ms ease, transform 160ms ease;
+		}
+		.contact-button:hover { transform: translateY(-2px); background: #593723; }
+		.contact-button svg { width: 16px; height: 16px; }
+		.monogram {
+			display: grid;
+			width: 220px;
+			aspect-ratio: 1;
+			place-items: center;
+			justify-self: center;
+			border: 1px solid #c9b8a5;
+			border-radius: 50%;
+			background: radial-gradient(circle at 35% 30%, #fffdf9 0, #e8dccd 72%);
+			color: var(--clay-dark);
+			font-family: var(--serif);
+			font-size: 76px;
+			letter-spacing: 0;
+			line-height: 1;
+		}
+
+		.content-grid {
+			display: grid;
+			grid-template-columns: minmax(0, 1.55fr) minmax(250px, 0.75fr);
+			gap: 80px;
+			padding: 66px 0 76px;
+			border-top: 1px solid var(--line);
+		}
+		.section-label {
+			margin-bottom: 26px;
+			color: var(--clay-dark);
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+		}
+		.section-title {
+			margin-bottom: 18px;
+			font-family: var(--serif);
+			font-size: 30px;
+			font-weight: 400;
+			letter-spacing: 0;
+			line-height: 1.2;
+		}
+		.profile-copy { max-width: 650px; margin-bottom: 0; color: #594f45; }
+		.main-column section + section { margin-top: 64px; }
+		.timeline { display: grid; gap: 28px; }
+		.timeline-item {
+			position: relative;
+			padding-left: 24px;
+			border-left: 1px solid #c8b7a4;
+		}
+		.timeline-item::before {
+			position: absolute;
+			top: 8px;
+			left: -5px;
+			width: 9px;
+			height: 9px;
+			border-radius: 50%;
+			background: var(--clay);
+			content: "";
+		}
+		.item-date { margin-bottom: 5px; color: var(--sage); font-size: 12px; font-weight: 700; }
+		.item-title { margin-bottom: 2px; font-size: 17px; font-weight: 700; line-height: 1.4; }
+		.item-place { margin-bottom: 10px; color: var(--muted); font-size: 14px; }
+		.item-description { margin-bottom: 0; color: #594f45; font-size: 14px; }
+		.item-description + .item-description { margin-top: 9px; }
+		.item-bullets { margin: 8px 0 0; padding-left: 18px; color: #594f45; font-size: 14px; }
+		.item-bullets li + li { margin-top: 6px; }
+
+		.sidebar { display: grid; align-content: start; gap: 40px; }
+		.sidebar-section { padding-top: 22px; border-top: 1px solid var(--line); }
+		.sidebar-section:first-child { padding-top: 0; border-top: 0; }
+		.sidebar .section-title { margin-bottom: 18px; font-size: 24px; }
+		.contact-list, .plain-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+		.contact-list li { color: #594f45; font-size: 14px; overflow-wrap: anywhere; }
+		.contact-list a { text-decoration-color: #c8b7a4; text-underline-offset: 3px; }
+		.skill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+		.skill-list li {
+			padding: 6px 10px;
+			border: 1px solid #d6c9bb;
+			border-radius: 2px;
+			color: #594f45;
+			font-size: 12px;
+			line-height: 1.4;
+		}
+		.plain-list li { display: flex; justify-content: space-between; gap: 14px; color: #594f45; font-size: 14px; }
+		.plain-list strong { color: var(--ink); font-weight: 600; }
+		.footer { padding: 24px 0 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+
+		@media (max-width: 760px) {
+			.page-shell { width: min(100% - 36px, 620px); }
+			.topbar { min-height: 72px; }
+			.nav-links { gap: 16px; }
+			.nav-links a { font-size: 12px; }
+			.hero { grid-template-columns: 1fr; gap: 38px; padding: 66px 0 58px; }
+			.hero-copy { order: 1; }
+			.monogram { order: 0; width: 142px; font-size: 52px; }
+			.hero-role { font-size: 14px; }
+			.hero-intro { font-size: 15px; }
+			.content-grid { grid-template-columns: 1fr; gap: 58px; padding: 48px 0 58px; }
+			.sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 24px; }
+			.sidebar-section:first-child { padding-top: 0; }
+		}
+		@media (max-width: 480px) {
+			.page-shell { width: calc(100% - 32px); }
+			.topbar { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; padding: 14px 0; }
+			.nav-links { width: 100%; justify-content: space-between; gap: 8px; }
+			.hero { padding-top: 48px; }
+			h1 { font-size: 52px; }
+			.sidebar { grid-template-columns: 1fr; }
+			.section-title { font-size: 27px; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+		}
+	</style>
+</head>
+<body>
+	<header class="page-shell topbar">
+		<a class="wordmark" href="#inicio" aria-label="Fernando Laso Blasco, inicio">Fernando Laso</a>
+		<nav aria-label="Navegación principal">
+			<ul class="nav-links">
+				<li><a href="#perfil">Perfil</a></li>
+				<li><a href="#experiencia">Experiencia</a></li>
+				<li><a href="#formacion">Formación</a></li>
+				<li><a href="#contacto">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="page-shell hero" id="inicio" aria-labelledby="page-title">
+			<div class="hero-copy">
+				<p class="eyebrow">Marketing · Investigación · Analítica</p>
+				<h1 id="page-title">Fernando<br>Laso Blasco</h1>
+				<p class="hero-role">Investigación de mercados · Marketing basado en datos · Analítica de negocio</p>
+				<p class="hero-intro">Conecto el conocimiento del consumidor con el análisis de datos para ayudar a tomar mejores decisiones de negocio.</p>
+				<a class="contact-button" href="mailto:fer.laso.b@gmail.com">
+					Hablemos
+					<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+			</div>
+			<div class="monogram" aria-label="Iniciales FL">FL</div>
+		</section>
+
+		<div class="page-shell content-grid">
+			<div class="main-column">
+				<section id="perfil" aria-labelledby="profile-title">
+					<p class="section-label">01 / Perfil</p>
+					<h2 class="section-title" id="profile-title">Curiosidad por las personas. Criterio para los datos.</h2>
+					<p class="profile-copy">Graduado en Marketing e Investigación de Mercados, con experiencia en conocimiento del consumidor, marketing digital y análisis de datos. Me interesa entender el comportamiento de las personas y convertir esa comprensión en decisiones de negocio. Actualmente amplío mis capacidades técnicas y analíticas en el Máster en Ciencia de Datos, Big Data y Analítica de Negocio de la Universidad Complutense de Madrid.</p>
+				</section>
+
+				<section id="experiencia" aria-labelledby="experience-title">
+					<p class="section-label">02 / Trayectoria</p>
+					<h2 class="section-title" id="experience-title">Experiencia profesional</h2>
+					<div class="timeline">
+						<article class="timeline-item">
+							<p class="item-date">Octubre 2025 – Agosto 2026</p>
+							<h3 class="item-title">Marketing digital</h3>
+							<p class="item-place">Oryx Parts</p>
+							<ul class="item-bullets">
+								<li>Gestioné y optimicé estrategias SEO para mejorar la visibilidad orgánica.</li>
+								<li>Optimicé contenidos digitales y analicé sus resultados para mejorar el rendimiento de marketing.</li>
+								<li>Apliqué datos y analítica para apoyar la toma de decisiones en marketing digital.</li>
+							</ul>
+						</article>
+					</div>
+				</section>
+
+				<section id="formacion" aria-labelledby="education-title">
+					<p class="section-label">03 / Aprendizaje</p>
+					<h2 class="section-title" id="education-title">Formación</h2>
+					<div class="timeline">
+						<article class="timeline-item">
+							<p class="item-date">2020 – 2025</p>
+							<h3 class="item-title">Grado en Marketing e Investigación de Mercados (MIM)</h3>
+							<p class="item-place">FECEM · Universidad de Zaragoza</p>
+						</article>
+						<article class="timeline-item">
+							<p class="item-date">2026 – 2027 · Finalización prevista: septiembre de 2027</p>
+							<h3 class="item-title">Máster en Ciencia de Datos, Big Data y Analítica de Negocio</h3>
+							<p class="item-place">Universidad Complutense de Madrid · Madrid</p>
+						</article>
+					</div>
+				</section>
+			</div>
+
+			<aside class="sidebar" aria-label="Información adicional">
+				<section class="sidebar-section" id="contacto" aria-labelledby="contact-title">
+					<p class="section-label">Contacto</p>
+					<h2 class="section-title" id="contact-title">Hablemos</h2>
+					<ul class="contact-list">
+						<li><a href="mailto:fer.laso.b@gmail.com">fer.laso.b@gmail.com</a></li>
+						<li><a href="tel:+34630805943">+34 630 80 59 43</a></li>
+						<li>Madrid, España</li>
+					</ul>
+				</section>
+
+				<section class="sidebar-section" aria-labelledby="tools-title">
+					<p class="section-label">Herramientas</p>
+					<h2 class="section-title" id="tools-title">Conocimientos</h2>
+					<ul class="skill-list">
+						<li>Microsoft Office · avanzado</li>
+						<li>Excel · avanzado</li>
+						<li>PowerPoint · avanzado</li>
+						<li>SPSS · formación intermedia</li>
+						<li>RStudio · formación intermedia</li>
+						<li>Power BI · formación intermedia</li>
+					</ul>
+				</section>
+
+				<section class="sidebar-section" aria-labelledby="strengths-title">
+					<p class="section-label">Fortalezas</p>
+					<h2 class="section-title" id="strengths-title">Aptitudes</h2>
+					<ul class="plain-list">
+						<li>Trabajo en equipo y comunicación</li>
+						<li>Adaptabilidad</li>
+						<li>Pensamiento estratégico</li>
+						<li>Pensamiento analítico</li>
+					</ul>
+				</section>
+
+				<section class="sidebar-section" aria-labelledby="languages-title">
+					<p class="section-label">Idiomas</p>
+					<h2 class="section-title" id="languages-title">Lenguas</h2>
+					<ul class="plain-list">
+						<li><span>Español</span><strong>Nativo</strong></li>
+						<li><span>Inglés</span><strong>B2</strong></li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+	</main>
+
+	<footer class="page-shell footer">
+		<p>© 2026 Fernando Laso Blasco · Madrid</p>
+	</footer>
+</body>
+</html>
